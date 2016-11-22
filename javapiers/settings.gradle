@@ -1,0 +1,4 @@
+rootProject.name = 'javapiers'
+include 'instrument'
+include 'filescanner'
+
