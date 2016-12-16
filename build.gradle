@@ -1,11 +1,12 @@
-group 'com.xianyue'
-version '1.0-SNAPSHOT'
+//group 'com.xianyue'
+//version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'eclipse'
 
 apply from: 'dependency.gradle'
+apply plugin: 'org.springframework.boot'
 
 
 sourceCompatibility = 1.8
@@ -15,11 +16,19 @@ repositories {
     mavenCentral()
 }
 
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+//        classpath(libraries."spring-boot-plugin")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.2.RELEASE")
+    }
+}
+
 dependencies {
-    testCompile(
-            libraries.'junit'
-    )
-    compile(
-            libraries.'asm',
-    )
+    testCompile(libraries.'junit')
+    compile(libraries.'spring-boot')
+
 }

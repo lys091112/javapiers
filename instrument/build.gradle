@@ -10,11 +10,5 @@ repositories {
 }
 
 dependencies {
-//    testCompile group: 'junit', name: 'junit', version: '4.11'
-    compile (
-//        libraries.'asm'
-
-        // maven {url "http://maven.oschina.net/content/groups/public/"}
-    )
 
 }

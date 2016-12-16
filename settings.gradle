@@ -1,4 +1,6 @@
 rootProject.name = 'javapiers'
 include 'instrument'
 include 'filescanner'
+include 'practice'
+include 'springboot'
 
