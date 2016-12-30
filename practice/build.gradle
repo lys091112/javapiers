@@ -11,5 +11,9 @@ repositories {
 }
 
 dependencies {
+    compile(
+            libraries.'jsql-parser',
+            libraries.'commons-lang3'
+    )
 
 }

@@ -63,5 +63,8 @@ ext.libraries = [
         "junit": "junit:junit:4.12",
 
         //ASM
-        "asm": "org.ow2.asm:asm:5.1"
+        "asm": "org.ow2.asm:asm:5.1",
+
+        //jsqlParse
+        "jsql-parser": 'com.github.jsqlparser:jsqlparser:0.9.6'
 ]
