@@ -4,13 +4,16 @@ package com.xianyue.leetcode;
   * @author Xianyue
   */
 public class NumberCode {
+
+    /**
+     * 两个倒序的字符串数字相加后的字符串数字
+     */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
         ListNode head = new ListNode(0);
         ListNode tail = head;
         ListNode node1 = l1;
         ListNode node2 = l2;
-
         int sum = 0;
         while (node1 != null || node2 != null) {
             sum = sum / 10;
@@ -26,8 +29,8 @@ public class NumberCode {
             tail = tail.next;
         }
         if (sum / 10 == 1) {
-//            tail.next = new ListNode(1);
-            tail = new ListNode(1);  //这里如果使用tail的话，由于是链表形式，实际上是影响不到head链表的数据的，相当于tail又新创建了一个节点
+            tail.next = new ListNode(1);
+            // tail = new ListNode(1); //这里如果使用tail的话，由于是链表形式，实际上是影响不到head链表的数据的，相当于tail又新创建了一个节点
         }
 
         return head.next;
@@ -43,7 +46,6 @@ public class NumberCode {
     static class ListNode {
         int      val;
         ListNode next;
-
         ListNode(int x) {
             val = x;
         }

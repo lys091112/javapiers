@@ -1,4 +1,4 @@
-package com.xianyue.basictype.database;
+package com.xianyue.third.database;
 
 
 import org.apache.commons.lang3.StringUtils;

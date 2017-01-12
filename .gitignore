@@ -7,6 +7,8 @@
 .idea/
 .gradle/
 *.iml
+*.class
+*build/
 
 gopiers/bin
 gopiers/tool_back

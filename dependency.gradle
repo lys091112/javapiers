@@ -7,6 +7,7 @@ ext.versions = [
         slf4j: '1.7.21',
         httpclient: '4.3.1',
         lucene: '4.10.1',
+        zookeeper: '3.4.9'
 ]
 
 ext.libraries = [
@@ -66,5 +67,6 @@ ext.libraries = [
         "asm": "org.ow2.asm:asm:5.1",
 
         //jsqlParse
-        "jsql-parser": 'com.github.jsqlparser:jsqlparser:0.9.6'
+        "jsql-parser": 'com.github.jsqlparser:jsqlparser:0.9.6',
+        "zookeeper":"org.apache.zookeeper:zookeeper:${versions.zookeeper}"
 ]

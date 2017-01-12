@@ -1,5 +1,5 @@
-//group 'com.xianyue'
-//version '1.0-SNAPSHOT'
+group 'com.xianyue'
+version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
 apply plugin: 'idea'

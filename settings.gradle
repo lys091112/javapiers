@@ -3,4 +3,5 @@ include 'instrument'
 include 'filescanner'
 include 'practice'
 include 'springboot'
+include 'distributed'
 

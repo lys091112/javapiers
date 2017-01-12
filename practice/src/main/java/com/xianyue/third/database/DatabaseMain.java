@@ -1,4 +1,4 @@
-package com.xianyue.basictype.database;
+package com.xianyue.third.database;
 
 
 /**
