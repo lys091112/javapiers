@@ -1,4 +1,4 @@
-package com.xianyue.classloader;
+package classloader;
 
 import com.xianyue.packageScan.EnumFileType;
 
@@ -72,7 +72,7 @@ public class SingleClassLoader extends ClassLoader {
         }
 
 
-        ClassLoader loader = com.xianyue.classloader.SingleClassLoader.class.getClassLoader();
+        ClassLoader loader = classloader.SingleClassLoader.class.getClassLoader();
         while (loader != null) {
             System.out.println(loader);
             loader = loader.getParent();

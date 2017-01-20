@@ -13,7 +13,10 @@ repositories {
 dependencies {
     compile(
             libraries.'jsql-parser',
-            libraries.'commons-lang3'
+            libraries.'commons-lang3',
+            libraries.'redis',
+            libraries.'redisson',
+            libraries.'cglib',
     )
 
 }

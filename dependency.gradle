@@ -7,7 +7,8 @@ ext.versions = [
         slf4j: '1.7.21',
         httpclient: '4.3.1',
         lucene: '4.10.1',
-        zookeeper: '3.4.9'
+        zookeeper: '3.4.9',
+        lombok:  '1.16.4'
 ]
 
 ext.libraries = [
@@ -68,5 +69,15 @@ ext.libraries = [
 
         //jsqlParse
         "jsql-parser": 'com.github.jsqlparser:jsqlparser:0.9.6',
-        "zookeeper":"org.apache.zookeeper:zookeeper:${versions.zookeeper}"
+        "zookeeper":"org.apache.zookeeper:zookeeper:${versions.zookeeper}",
+
+        //lombok
+        "lombok": "org.projectlombok:lombok:${versions.lombok}",
+
+        //Redis
+        "redisson": "org.redisson:redisson:2.2.16",
+        "redis": "redis.clients:jedis:2.9.0",
+
+        //cglib
+        "cglib": "cglib:cglib:3.1",
 ]

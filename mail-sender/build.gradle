@@ -1,0 +1,22 @@
+group 'com.xianyue'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile(libraries.'junit')
+    compile(
+            libraries.'lombok',
+            libraries.'logback-classic',
+            libraries.'jcl-over-slf4j',
+            libraries.'log4j-over-slf4j',
+            libraries.'slf4j-api',
+            libraries.'commons-lang3',
+            )
+}

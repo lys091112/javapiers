@@ -4,4 +4,5 @@ include 'filescanner'
 include 'practice'
 include 'springboot'
 include 'distributed'
+include 'mail-sender'
 
