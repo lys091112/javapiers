@@ -5,7 +5,7 @@ import com.xianyue.mail.sender.entity.MailEntity;
 /**
  * @author Xianyue
  */
-public interface IMailSender {
+public interface ISender {
 
     public boolean send(MailEntity mailInfo);
 }

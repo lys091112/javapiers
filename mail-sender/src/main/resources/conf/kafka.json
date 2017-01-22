@@ -1,0 +1,9 @@
+{
+  "topic": "send_jl_message",
+  "group.id": "send_jl_message_group",
+  "zookeeper": {
+    "connect": "10.172.171.229:2181,10.171.84.196:2181,10.172.177.98:2181,10.170.197.109:2181,10.171.22.201:2181/gemini",
+    "session.timeout.ms": 6000,
+    "connection.timeout.ms": 6000
+  },
+}
