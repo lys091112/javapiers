@@ -8,7 +8,8 @@ ext.versions = [
         httpclient: '4.3.1',
         lucene: '4.10.1',
         zookeeper: '3.4.9',
-        lombok:  '1.16.4'
+        lombok:  '1.16.4',
+        ali_json: '1.2.7'
 ]
 
 ext.libraries = [
@@ -50,6 +51,7 @@ ext.libraries = [
 
         // JSON
         "jackson-databind": "com.fasterxml.jackson.core:jackson-databind:${versions.jackson}",
+        "json-ali":"com.alibaba:fastjson:${versions.ali_json}",
 
         // Apache
         "commons-dbcp": "commons-dbcp:commons-dbcp:1.4",

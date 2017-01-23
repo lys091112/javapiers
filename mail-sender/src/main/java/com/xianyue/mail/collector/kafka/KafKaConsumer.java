@@ -1,4 +1,4 @@
-package com.xianyue.mail.operate.kafka;
+package com.xianyue.mail.collector.kafka;
 
 /**
  * @author Xianyue

@@ -1,9 +1,13 @@
 package com.xianyue.mail;
 
 import ch.qos.logback.core.joran.spi.JoranException;
+import com.alibaba.fastjson.JSONObject;
 import com.xianyue.mail.collector.IMailCollector;
+import com.xianyue.mail.constants.MailConstants;
 import com.xianyue.mail.sender.ISender;
+import com.xianyue.mail.sender.MailFactory;
 import com.xianyue.mail.sender.entity.MailEntity;
+import com.xianyue.mail.util.ConfigurationLoader;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,6 +44,12 @@ public class MailWorker {
      */
     public void initialize() throws IOException, JoranException {
         LogBackConfigLoader.load("conf/logback.xml");
+        Optional<JSONObject> senderConfig = ConfigurationLoader.loadJsonConfiguration("sender.json");
+        if(!senderConfig.isPresent()) {
+            throw new RuntimeException("缺少对应的配置文件. conf/sender.json");
+        }
+        MailFactory.senders(senderConfig.get());
+
     }
 
     public void start() throws IOException, JoranException {

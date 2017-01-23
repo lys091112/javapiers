@@ -17,6 +17,11 @@ dependencies {
             libraries.'redis',
             libraries.'redisson',
             libraries.'cglib',
+            libraries.'json-ali',
+            libraries.'logback-classic',
+            libraries.'jcl-over-slf4j',
+            libraries.'log4j-over-slf4j',
+            libraries.'slf4j-api',
     )
 
 }

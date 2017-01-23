@@ -70,8 +70,11 @@ public class Reader {
     }
 
     public static void main(String[] args) {
+        System.out.println("---------------jdk6");
         readFileJDK6("build.gradle");
+        System.out.println("---------------jdk7");
         readFileJDK7("build.gradle");
+        System.out.println("---------------jdk8");
         readFileJDK8("build.gradle");
     }
 }

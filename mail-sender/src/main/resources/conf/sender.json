@@ -1,29 +1,33 @@
-[
-  {
-    "name": "alertMail",
-    "class": "com.xianyue.mail.sender.impl.CommonSender",
-    "mail": {
-      "smtp.host": "smtp.exmail.qq.com",
-      "smtp.port": 25,
-      "username": "alert@oneapm.me",
-      "password": "alert@123321",
-      "ssl": false
+{
+  "senders": [
+    {
+      "name": "alertMail",
+      "class": "com.xianyue.mail.sender.impl.CommonSender",
+      "config": {
+        "mail": {
+          "smtp.host": "smtp.exmail.qq.com",
+          "smtp.port": 25,
+          "username": "alert@oneapm.me",
+          "password": "alert@123321",
+          "ssl": false
+        }
+      }
     },
-    //消费kafka数据进行邮件处理
-    "collector": "kafka"
-  },
-  {
-    "name": "reportMail",
-    "class": "com.xianyue.mail.sender.impl.CommonSender",
-    "email": {
-      "smtp.host": "smtp.exmail.qq.com",
-      "smtp.port": 25,
-      "username": "report@oneapm.me",
-      "password": "report@123321",
-      "ssl": false
-    },
-    //使用内存队列数据进行邮件处理
-    "collector": "memory"
-  }
-]
-
+    {
+      "name": "reportMail",
+      "class": "com.xianyue.mail.sender.impl.CommonSender",
+      "config": {
+        "mail": {
+          "smtp.host": "smtp.exmail.qq.com",
+          "smtp.port": 25,
+          "username": "report@oneapm.me",
+          "password": "report@123321",
+          "ssl": false
+        }
+      }
+    }
+  ],
+  //邮件数据的获取方式：memory(内存队列),kafka,...
+  "collector": "memory",
+  "default": "alertMail"
+}
