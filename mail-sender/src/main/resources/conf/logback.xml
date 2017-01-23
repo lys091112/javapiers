@@ -42,6 +42,10 @@
 	</appender>
 
 
+	<logger name="com.xianyue.mail.sender.impl.CommonSender" level="DEBUG" additivity="false">
+		<appender-ref ref="debug" />
+	</logger>
+
 	<root level="INFO">
 		<appender-ref ref="main" />
 	</root>
