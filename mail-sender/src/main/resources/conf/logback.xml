@@ -42,18 +42,6 @@
 	</appender>
 
 
-	<logger name="com.blueocn.mail.sender.MailSender" level="ERROR" additivity="true">
-		<appender-ref ref="noSend" />
-	</logger>
-
-	<logger name="com.blueocn.mail.sender.impl.SendCloudMailSender" level="DEBUG" additivity="false">
-		<appender-ref ref="main" />
-	</logger>
-
-	<logger name="com.blueocn.mail.kafka.KafkaConsumer" level="DEBUG" additivity="false">
-		<appender-ref ref="debug" />
-	</logger>
-	
 	<root level="INFO">
 		<appender-ref ref="main" />
 	</root>
