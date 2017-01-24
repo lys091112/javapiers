@@ -29,5 +29,6 @@
   ],
   //邮件数据的获取方式：memory(内存队列),kafka,...
   "collector": "memory",
-  "default": "alertMail"
+  "defaultSender": "alertMail",
+  "handler":""
 }
