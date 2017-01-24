@@ -1,6 +1,6 @@
 package com.xianyue.mail.collector;
 
-import com.xianyue.mail.collector.kafka.KafKaConsumer;
+import com.xianyue.mail.collector.kafka.KafkaConsumer;
 import com.xianyue.mail.collector.memory.MemoryCollector;
 import com.xianyue.mail.constants.CollectorType;
 import org.apache.commons.lang3.StringUtils;
@@ -22,7 +22,7 @@ public class CollectorFactory {
         CollectorType enumType = CollectorType.collectorType(type);
         switch (enumType) {
             case KAFKA:
-                return new KafKaConsumer();
+                return new KafkaConsumer();
             case MEMORY:
                 return new MemoryCollector();
         }

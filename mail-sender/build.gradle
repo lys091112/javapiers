@@ -19,5 +19,6 @@ dependencies {
             libraries.'slf4j-api',
             libraries.'commons-lang3',
             libraries.'json-ali',
+            libraries.'kafka',
             )
 }
