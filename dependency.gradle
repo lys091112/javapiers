@@ -10,7 +10,7 @@ ext.versions = [
         zookeeper : '3.4.9',
         lombok    : '1.16.4',
         ali_json  : '1.2.7',
-        kafka     : '0.8.1'
+        kafka     : '0.8.2.2'
 ]
 
 ext.libraries = [
@@ -74,5 +74,5 @@ ext.libraries = [
         "zookeeper"              : "org.apache.zookeeper:zookeeper:${versions.zookeeper}",
         "lombok"                 : "org.projectlombok:lombok:${versions.lombok}",
         "cglib"                  : "cglib:cglib:3.1",
-        "kafka"                  : "org.apache.kafka:kafka_2.10:${versions.kafka}"
+        "kafka"                  : "org.apache.kafka:kafka_2.9.2:${versions.kafka}"
 ]

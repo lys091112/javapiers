@@ -14,12 +14,38 @@ public class BasicMath {
         //查看5086中包含多少个2048
         int size = ((5086  + BUNKLE - 1) & ~(BUNKLE -1)) / BUNKLE;
         System.out.println("size " + size);
+    }
 
+    /**
+     *  牛顿迭代法求平方根
+     */
+    public static double sqrt(double a) {
+        if(a < 0) return Double.NaN;
+        double err = 1e-15;
+        double t = a;
+        while(Math.abs(t * t - a) > err * a) {
+            t = (t + a / t) / 2.0;
+        }
+        return t;
+    }
 
+    /**
+     * 调和级数
+     */
+    public static double harmonic(int n) {
+        if(n < 0) return Double.NaN;
+        double h = 0.0D;
+        for (int i = 0; i < n; i++) {
+           h += 1.0 / (i + 1) ;
+        }
+        return h;
     }
 
     public static void main(String[] args) {
         BasicMath math = new BasicMath();
         math.complementation();
+
+        System.out.println(sqrt(5));
+        System.out.println(harmonic(4));
     }
 }

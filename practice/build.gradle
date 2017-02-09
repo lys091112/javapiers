@@ -4,24 +4,29 @@ version '1.0-SNAPSHOT'
 apply plugin: 'java'
 
 sourceCompatibility = 1.8
-targetCompatibility = 1.8
+/**targetCompatibility = 1.8**/
 
 repositories {
-    mavenCentral()
+    mavenLocal() //1.优先查找本地maven库，性能最好
+    maven{//2.其次查找aliyun maven库
+        url'http://maven.aliyun.com/nexus/content/groups/public/'
+    }
+    mavenCentral()//3.最后查找maven中央库
 }
 
 dependencies {
+    testCompile(libraries.'junit')
     compile(
             libraries.'jsql-parser',
             libraries.'commons-lang3',
-            libraries.'redis',
-            libraries.'redisson',
-            libraries.'cglib',
             libraries.'json-ali',
             libraries.'logback-classic',
             libraries.'jcl-over-slf4j',
             libraries.'log4j-over-slf4j',
             libraries.'slf4j-api',
+            libraries.'redis',
+            libraries.'redisson',
+            libraries.'cglib',
     )
 
 }

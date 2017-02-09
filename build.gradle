@@ -17,5 +17,17 @@ repositories {
 
 dependencies {
     testCompile(libraries.'junit')
+    compile(
+            libraries.'jsql-parser',
+            libraries.'commons-lang3',
+            libraries.'redis',
+            libraries.'redisson',
+            libraries.'cglib',
+            libraries.'json-ali',
+            libraries.'logback-classic',
+            libraries.'jcl-over-slf4j',
+            libraries.'log4j-over-slf4j',
+            libraries.'slf4j-api'
+            )
 }
 
