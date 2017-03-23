@@ -6,7 +6,7 @@ import com.xianyue.proxy.own.BookFacade;
 import com.xianyue.proxy.own.BookFacade1;
 import com.xianyue.proxy.own.BookFacadeProxy;
 
-public class Main {
+public class ProxyMain {
 
     public static void main(String[] args) {
         BookFacadeProxy proxy = new BookFacadeProxy();

@@ -9,6 +9,11 @@ repositories {
     mavenCentral()
 }
 
+//指定springboot启动的main入口类
+springBoot {
+    mainClass = "com.xianyue.springboot.Application"
+}
+
 buildscript {
     repositories {
         mavenCentral()
@@ -20,7 +25,20 @@ buildscript {
 }
 
 dependencies {
+    testCompile(libraries.'junit')
     compile(
-            libraries.'spring-boot'
+            libraries.'spring-boot',
+            libraries.'spring-boot-jdbc',
+            libraries.'lombok',
+            libraries.'redis',
+            libraries.'swagger',
+            libraries.'swagger-ui',
+            libraries.'ali-json',
+            libraries.'mysql-connector',
+            libraries.'ali-druid',
+            libraries.'mybatis',
+            libraries.'cglib',
+            libraries.'mybatis-spring',
+            libraries.'commons-io'
     )
 }

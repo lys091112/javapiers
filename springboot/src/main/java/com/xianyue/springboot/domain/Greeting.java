@@ -1,4 +1,4 @@
-package com.xianyue.greet;
+package com.xianyue.springboot.domain;
 
 /**
  *@author  XianYue

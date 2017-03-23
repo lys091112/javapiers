@@ -23,7 +23,7 @@ dependencies {
             libraries.'log4j-over-slf4j',
             libraries.'slf4j-api',
             libraries.'commons-lang3',
-            libraries.'json-ali',
+            libraries.'ali-json',
             libraries.'kafka'
     )
 }

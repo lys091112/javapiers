@@ -1,4 +1,4 @@
-package com.xianyue.util;
+package com.xianyue.springboot.util;
 
 import java.nio.charset.Charset;
 import java.security.MessageDigest;

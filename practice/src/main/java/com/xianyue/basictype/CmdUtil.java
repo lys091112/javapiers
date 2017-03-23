@@ -12,7 +12,7 @@ import java.io.InputStreamReader;
 public class CmdUtil {
 
     public static void main(String[] args) throws IOException {
-        Process process = Runtime.getRuntime().exec("ls",null, null);
+        Process process = Runtime.getRuntime().exec("ping www.baidu.com",null, null);
         InputStream inputStream = process.getInputStream();
         BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
         reader.lines().forEach(t -> System.out.println(t));
