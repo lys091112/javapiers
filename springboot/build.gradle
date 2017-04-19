@@ -16,6 +16,10 @@ springBoot {
 
 buildscript {
     repositories {
+        mavenLocal() //1.优先查找本地maven库，性能最好
+        maven{//2.其次查找aliyun maven库
+            url'http://maven.aliyun.com/nexus/content/groups/public/'
+        }
         mavenCentral()
         jcenter()
     }
@@ -29,6 +33,7 @@ dependencies {
     compile(
             libraries.'spring-boot',
             libraries.'spring-boot-jdbc',
+            libraries.'spring-boot-mail',
             libraries.'lombok',
             libraries.'redis',
             libraries.'swagger',
@@ -39,6 +44,9 @@ dependencies {
             libraries.'mybatis',
             libraries.'cglib',
             libraries.'mybatis-spring',
-            libraries.'commons-io'
+            libraries.'commons-io',
+            libraries.'guava'
     )
+//    compile(libraries.'swagger') { exclude group:'com.google.guava', module:'guava' }
 }
+

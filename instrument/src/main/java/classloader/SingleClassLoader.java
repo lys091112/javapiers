@@ -1,7 +1,5 @@
 package classloader;
 
-import com.xianyue.packageScan.EnumFileType;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -60,9 +58,7 @@ public class SingleClassLoader extends ClassLoader {
     }
 
     private String convertNameToPath(String name) {
-
         return "/home/crescent/workspace/javapiers/filescanner/build/classes/" + name.replaceAll("\\.","/") + ".class";
-
     }
 
     public static void main(String[] args) {
@@ -79,19 +75,18 @@ public class SingleClassLoader extends ClassLoader {
         }
         System.out.println(loader);
 
-        Class fileType = null;
-        try {
-            SingleClassLoader singleClassLoader = new SingleClassLoader();
-            fileType = singleClassLoader.loadClass("com.blueocn.tps.v2.metrics.service.MetricService");
-
-            System.out.println(fileType.getClassLoader());
-
-            SingleClassLoader singleClassLoader2 = new SingleClassLoader();
-            Class fileType2 = singleClassLoader2.loadClass("com.blueocn.tps.v2.metrics.service.MetricService");
-//            System.out.println(fileType2.getClassLoader());
-        } catch (ClassNotFoundException e) {
-            System.out.println("class not found!");
-        }
+//        Class fileType = null;
+//        try {
+//            SingleClassLoader singleClassLoader = new SingleClassLoader();
+//            fileType = singleClassLoader.loadClass("com.blueocn.tps.v2.metrics.service.MetricService");
+//
+//            System.out.println(fileType.getClassLoader());
+//
+//            SingleClassLoader singleClassLoader2 = new SingleClassLoader();
+//            Class fileType2 = singleClassLoader2.loadClass("com.blueocn.tps.v2.metrics.service.MetricService");
+//        } catch (ClassNotFoundException e) {
+//            System.out.println("class not found!");
+//        }
 
     }
 }

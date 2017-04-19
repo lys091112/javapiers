@@ -9,5 +9,5 @@ import java.util.Properties;
  */
 public interface ISender {
     public boolean init(Properties config);
-    public boolean send(MailEntity mailInfo);
+    public boolean send(IMailEntity mailInfo);
 }

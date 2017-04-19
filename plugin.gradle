@@ -1,0 +1,37 @@
+apply plugin: 'jacoco'
+
+jacoco {
+    toolVersion = "0.7.6.201602180812"
+    reportsDir = file("$buildDir/customJacocoReportDir")
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination "${buildDir}/jacocoHtml"
+    }
+}
+
+//task jacocoTestReport (type:JacocoReport) {
+//    group = "Reporting"
+//    description = "Generate Jacoco coverage reports on the  build."
+//    classDirectories = fileTree(
+//            dir: "${project.buildDir}/intermediates/classes",
+//            excludes: ['**/R.class',
+//                       '**/R$*.class',
+//                       '**/*$ViewInjector*.*',
+//                       '**/BuildConfig.*',
+//                       '**/Manifest*.*']
+
+//    def coverageSourceDirs = [
+//            "src/main/java"
+//    ]
+//    additionalSourceDirs = files(coverageSourceDirs)
+//    sourceDirectories = files(coverageSourceDirs)
+//    executionData = fileTree(dir:'./build/outputs',include:'**/*.ec')
+//    reports {
+//        xml.enabled = true
+//        html.enabled = true
+//    }
+//}

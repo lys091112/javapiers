@@ -4,6 +4,7 @@ import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableMap;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -75,6 +76,9 @@ public class GuavaMain {
         int index = getCharacterPosition(external,2);
         System.out.println("index " +  index);
         System.out.println(external.substring(0, index));
+
+
+        System.out.println(Joiner.on("").join(Arrays.asList("InnerCall","/","HTTP/all")));
     }
 
     public static int getCharacterPosition(String string, int n){

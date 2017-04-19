@@ -1,0 +1,4 @@
+0origin ExternalCall/HTTP/mock/register_service1
+Zg0:{ExternalCall/HTTP/mock/register_service1},g1:{HTTP}, g2:{mock},g3:{register_service1}
+%origin ExternalCall/HTTP/mock/allWeb
+Dg0:{ExternalCall/HTTP/mock/allWeb},g1:{HTTP}, g2:{mock},g3:{allWeb}

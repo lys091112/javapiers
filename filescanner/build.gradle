@@ -6,6 +6,8 @@ apply plugin: 'idea'
 
 sourceCompatibility = 1.8
 
+apply from: '../plugin.gradle'
+
 repositories {
     mavenCentral()
 }

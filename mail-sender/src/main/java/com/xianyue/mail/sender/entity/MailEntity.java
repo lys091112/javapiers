@@ -1,5 +1,6 @@
 package com.xianyue.mail.sender.entity;
 
+import com.xianyue.mail.sender.IMailEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,7 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class MailEntity {
+public class MailEntity implements IMailEntity {
     private String         from;       // 发件人
     private List<String>   to;         // 收件人
     private String         subject;    // 邮件主题

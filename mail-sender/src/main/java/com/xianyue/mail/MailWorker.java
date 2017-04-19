@@ -35,9 +35,6 @@ public class MailWorker {
 
     private ScheduledExecutorService executorService = Executors.newScheduledThreadPool(4);
 
-    public MailWorker() {
-    }
-
     /**
      * 加载配置文件，初始化worker
      */

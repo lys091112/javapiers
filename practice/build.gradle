@@ -5,7 +5,9 @@ apply plugin: 'java'
 apply plugin: 'idea'
 
 sourceCompatibility = 1.8
-/**targetCompatibility = 1.8**/
+targetCompatibility = 1.8
+
+apply from: '../plugin.gradle'
 
 repositories {
     mavenLocal() //1.优先查找本地maven库，性能最好
@@ -38,7 +40,8 @@ dependencies {
             libraries.'cglib',
             libraries.'guava',
             libraries.'commons-collections',
+            libraries.'lombok',
 
     )
-
 }
+

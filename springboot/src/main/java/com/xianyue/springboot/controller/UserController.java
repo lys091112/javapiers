@@ -1,11 +1,10 @@
 package com.xianyue.springboot.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.xianyue.springboot.domain.User;
 import com.xianyue.springboot.config.UserDemo;
+import com.xianyue.springboot.domain.User;
 import com.xianyue.springboot.service.UserService;
 import com.xianyue.springboot.util.RedisTemplate;
-import com.xianyue.springboot.util.RequestHelper;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

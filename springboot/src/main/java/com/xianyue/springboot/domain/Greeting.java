@@ -1,8 +1,11 @@
 package com.xianyue.springboot.domain;
 
+import lombok.Getter;
+
 /**
  *@author  XianYue
  */
+@Getter
 public class Greeting {
 
     private final int id;
@@ -11,13 +14,5 @@ public class Greeting {
     public Greeting(int id, String context) {
         this.id = id;
         this.context = context;
-    }
-
-    public String getContext() {
-        return context;
-    }
-
-    public int getId() {
-        return id;
     }
 }
