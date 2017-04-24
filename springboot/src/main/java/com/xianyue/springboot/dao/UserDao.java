@@ -23,8 +23,12 @@ public class UserDao {
         return userMapper.updateUser(user);
     }
 
+    public User query(int userId) {
+       return userMapper.query(userId);
+    }
+
     public int testTransaction(User user) {
-        if (user.getUsername().startsWith("trans")) {
+        if (user.getUserName().startsWith("trans")) {
             throw new TransException("this is a transaction test");
         }
         return 1;

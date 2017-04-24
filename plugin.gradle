@@ -13,6 +13,11 @@ jacocoTestReport {
     }
 }
 
+
+
+//code
+[compileJava, javadoc, compileTestJava]*.options*.encoding = 'UTF-8'
+
 //task jacocoTestReport (type:JacocoReport) {
 //    group = "Reporting"
 //    description = "Generate Jacoco coverage reports on the  build."

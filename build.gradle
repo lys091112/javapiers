@@ -19,6 +19,12 @@ repositories {
     mavenCentral()//3.最后查找maven中央库
 }
 
+idea {
+    module {
+        downloadJavadoc = false
+        downloadSources = false
+    }
+}
 
 dependencies {
     testCompile(libraries.'junit')

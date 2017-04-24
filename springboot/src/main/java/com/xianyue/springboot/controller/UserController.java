@@ -85,7 +85,7 @@ public class UserController {
     public int updateUser(@RequestParam(value = "userId") int userId, @RequestParam(value = "username") String userName, @RequestParam(value = "password") String password) {
         User user = new User();
         user.setUserId(userId);
-        user.setUsername(userName);
+        user.setUserName(userName);
         user.setPassword(password);
         return userService.updateUser(user);
     }

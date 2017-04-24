@@ -29,7 +29,10 @@ buildscript {
 }
 
 dependencies {
-    testCompile(libraries.'junit')
+    testCompile(
+            libraries.'junit',
+            libraries.'spring-boot-test'
+    )
     compile(
             libraries.'spring-boot',
             libraries.'spring-boot-jdbc',

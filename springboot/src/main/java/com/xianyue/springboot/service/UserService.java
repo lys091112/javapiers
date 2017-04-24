@@ -5,8 +5,11 @@ import com.xianyue.springboot.domain.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import javax.annotation.PostConstruct;
 
 /**
  *
@@ -17,10 +20,23 @@ public class UserService {
     @Autowired
     private UserDao userDao;
 
+    @Value (value = "${user.id}")
+    private long userId = 0;
+
+
+    /**
+     * 通过这个实例证明@Value的初始化在PostConstruct之前
+     */
+    @PostConstruct
+    public void init() {
+//        System.out.println("user.id----------------- = "+userId);
+//        userId = 9L;
+//        System.out.println("user.id2---------------- = "+ userId);
+    }
 
     public User addUser(String userName, String password) {
         User user = new User();
-        user.setUsername(userName);
+        user.setUserName(userName);
         user.setPassword(password);
         userDao.addUser(user);
         return user;
