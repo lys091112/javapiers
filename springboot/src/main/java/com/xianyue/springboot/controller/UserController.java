@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -96,6 +97,11 @@ public class UserController {
 //        User user = RequestHelper.getJsonFromReqeust(request,User.class);
         User user = JSON.parseObject(str, User.class);
         return userService.testTransaction(user);
-
     }
+
+    @RequestMapping(value = "/getUsers", method = RequestMethod.POST)
+    public List<User> getUsers(@RequestParam(value = "pageIndex") int pageIndex) {
+        return userService.getUsersByPage(pageIndex);
+    }
+
 }

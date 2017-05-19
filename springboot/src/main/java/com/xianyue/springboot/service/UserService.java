@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.PostConstruct;
+import java.util.List;
 
 /**
  *
@@ -57,5 +58,11 @@ public class UserService {
         logger.info("test transaction. continue...");
         userDao.testTransaction(user);
         return 1;
+    }
+
+    public List<User> getUsersByPage(int pageIndex) {
+        User user = new User();
+        user.setPageIndex(pageIndex);
+        return userDao.getUsersByPage(user);
     }
 }

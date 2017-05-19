@@ -23,16 +23,17 @@ import java.util.Set;
  */
 @Configuration
 public class JedisClusterConfig {
+
     @Autowired
-    private RedisPropertiesConfig redisPropertiesConfig;
+    private RedisPropertiesConfig redisConfig;
 
     @Bean
     public JedisCluster getJedisCluster() {
-        if(!redisPropertiesConfig.isEnabled()) {
+        if(!redisConfig.isEnabled()) {
             return null;
         }
 
-        String[] addresses = redisPropertiesConfig.getClusterNodes().split(";");
+        String[] addresses = redisConfig.getClusterNodes().split(";");
         if(addresses.length == 0) {
             throw  new RuntimeException("redis cluster must be not null");
         }
@@ -40,6 +41,6 @@ public class JedisClusterConfig {
         for (String addr: addresses ) {
             nodes.add(HostAndPort.parseString(addr));
         }
-        return new JedisCluster(nodes, redisPropertiesConfig.getCommandTimeout());
+        return new JedisCluster(nodes, redisConfig.getCommandTimeout());
     }
 }

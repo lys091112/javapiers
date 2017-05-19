@@ -20,8 +20,7 @@ repositories {
 dependencies {
     testCompile(
             libraries.'junit',
-            libraries.'hamcrest-library',
-            libraries.'hamcrest-core',
+            libraries.'hamcrest',
             libraries.'mockito',
             libraries.'powermock',
             libraries.'powermock-api',

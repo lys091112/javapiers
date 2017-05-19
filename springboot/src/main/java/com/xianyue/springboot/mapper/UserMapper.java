@@ -5,6 +5,8 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import java.util.List;
+
 /**
  * @author Xianyue
  */
@@ -18,4 +20,8 @@ public interface UserMapper {
 
     @Select("select * from user where userid = #{userId}")
     public User query(int userId);
+
+    public int count();
+
+    public List<User> getUsersByPage(User user);
 }

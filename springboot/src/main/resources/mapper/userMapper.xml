@@ -6,6 +6,12 @@
     <!--userid, username, password-->
     <!--</sql>-->
 
+    <resultMap id="User" type="User">
+        <id property="userId" column="userid" />
+        <result property="userName" column="username"/>
+        <result property="password" column="password"/>
+    </resultMap>
+
     <insert id="addUser" useGeneratedKeys="true" keyProperty="userId"
             parameterType="User">
         INSERT INTO user (username, password)
@@ -14,4 +20,12 @@
         #{password}
         )
     </insert>
+
+    <select id="count" resultType="int">
+        select count(*) from user
+    </select>
+
+    <select id="getUsersByPage" parameterType="User" resultMap="User">
+        select * from user
+    </select>
 </mapper>

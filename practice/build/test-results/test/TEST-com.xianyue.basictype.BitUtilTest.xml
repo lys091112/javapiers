@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.xianyue.basictype.BitUtilTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-04-13T03:29:17" hostname="langle-desktop" time="0.001">
-  <properties/>
-  <testcase name="isFitBitTest" classname="com.xianyue.basictype.BitUtilTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

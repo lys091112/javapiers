@@ -2,18 +2,20 @@ package com.xianyue.mocktiotest;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.ArgumentMatcher;
 import org.mockito.InjectMocks;
 import org.mockito.Mockito;
 import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
-
-import static org.mockito.Mockito.*;
-
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.when;
 
 /**
  * @author Xianyue
@@ -85,4 +87,35 @@ public class StepTest {
         assertEquals("bbb", step.callSystemStaticMethod("aaa"));
     }
 
+
+    /**
+     *<p>
+     *     用来精确mock函数执行时的参数.
+     *     如下： 表示当argument=5是测试才可以通过
+     *</p>
+     */
+    @Test
+    public void testAA() {
+        List list = Mockito.mock(ArrayList.class);
+        when(list.add(Mockito.argThat(new ArgumentMatcher<Integer>() {
+            @Override
+            public boolean matches(Object argument) {
+                return ((int) argument) == 5;
+            }
+        }))).thenReturn(true);
+
+        boolean res = list.add(5);
+        assertTrue(res);
+    }
+
+    @Test
+    public void testBB() {
+        List list = Mockito.mock(ArrayList.class);
+        when(list.add(Mockito.eq(5))).thenReturn(true);
+
+        boolean res = list.add(5);
+        assertTrue(res);
+        boolean res2 = list.add(3);
+        assertFalse(res2);
+    }
 }

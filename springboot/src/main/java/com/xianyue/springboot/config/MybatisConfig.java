@@ -1,6 +1,8 @@
 package com.xianyue.springboot.config;
 
 import com.alibaba.druid.pool.DruidDataSourceFactory;
+import com.xianyue.springboot.interceptor.OwnPageInterceptor;
+import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
@@ -52,6 +54,7 @@ public class MybatisConfig {
         SqlSessionFactoryBean fb = new SqlSessionFactoryBean();
         fb.setDataSource(ds);  //指定数据源
 
+        fb.setPlugins(new Interceptor[]{new OwnPageInterceptor()});
         //下边两句仅仅用于*.xml文件，如果整个持久层操作不需要使用到xml文件的话（只用注解就可以搞定），则不加
         fb.setTypeAliasesPackage(environment.getProperty("mybatis.typeAliasesPackage")); //指定基包
         fb.setMapperLocations(new PathMatchingResourcePatternResolver().getResources(environment.getProperty("mybatis.mapperLocations"))); //指定xml文件位置

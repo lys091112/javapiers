@@ -6,6 +6,8 @@ import com.xianyue.springboot.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * @author Xianyue
  */
@@ -32,5 +34,13 @@ public class UserDao {
             throw new TransException("this is a transaction test");
         }
         return 1;
+    }
+
+    public int count() {
+        return userMapper.count();
+    }
+
+    public List<User> getUsersByPage(User user) {
+       return userMapper.getUsersByPage(user) ;
     }
 }
