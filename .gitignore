@@ -8,10 +8,8 @@
 .gradle/
 *.iml
 *.class
-filescanner/build/*
-springboot/build/*
+*/build/*
+/build/*
 
-gopiers/bin
-gopiers/tool_back
 
 

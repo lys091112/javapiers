@@ -1,23 +1,33 @@
 package com.xianyue.basictype.lamabda;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.*;
 
 import java.math.BigDecimal;
 
 /**
  */
-@AllArgsConstructor
-@Getter
+@NoArgsConstructor
+@Data
 public class Item {
     private Long itemId;
     private String name;
     private int qty;
     private BigDecimal price;
 
+    public Item(Long itemId, String name, int qty, BigDecimal price) {
+        this.itemId = itemId;
+        this.name = name;
+        this.qty = qty;
+        this.price = price;
+    }
+
     @Override
     public String toString() {
         return super.toString();
-//        return String.format("name: %s, qty: %s, price: %d",name,qty,price.intValue());
+    }
+
+    public static void main(String[] args) {
+        Item item = new Item(1L,"hello",3, new BigDecimal(4));
+        System.out.println(item.getPrice());
     }
 }
