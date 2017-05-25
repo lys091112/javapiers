@@ -60,8 +60,6 @@ public class UserDaoTest {
         User user2 = userDao.query(user.getUserId());
         System.out.println(user1.getUserName());
         assertThat(user2.getUserName(), Matchers.equalTo("newUser"));
-
-
     }
 
 }
