@@ -1,4 +1,4 @@
-package com.xianyue.guava;
+package com.xianyue.util.guava;
 
 import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableMap;

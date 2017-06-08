@@ -29,6 +29,7 @@ dependencies {
     compile(
             libraries.'jsql-parser',
             libraries.'commons-lang3',
+            libraries.'jackson-databind',
             libraries.'ali-json',
             libraries.'logback-classic',
             libraries.'jcl-over-slf4j',
