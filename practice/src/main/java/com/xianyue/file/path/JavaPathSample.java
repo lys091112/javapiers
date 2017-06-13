@@ -1,4 +1,4 @@
-package com.xianyue.basictype.path;
+package com.xianyue.file.path;
 
 /**
  * lass.getResourceAsStream() 会指定要加载的资源路径与当前类所在包的路径一致。
@@ -26,10 +26,12 @@ public class JavaPathSample {
         //获取文件当前的路径，不包括自己
         System.out.println(JavaPathSample.class.getResource("").getPath());
 
-        //获取当前classPath的绝对URL路径
+        //获取当前classPath的绝对URL路
         System.out.println(JavaPathSample.class.getClassLoader().getResource("").getPath());
         System.out.println(JavaPathSample.class.getResource("/").getPath());
         System.out.println(ClassLoader.getSystemResource("").getPath());
         System.out.println(Thread.currentThread().getContextClassLoader().getResource("").getPath());
+        System.out.println(JavaPathSample.class.getClassLoader().getClass().getName());
+        System.out.println(Thread.currentThread().getContextClassLoader().getClass().getName());
     }
 }

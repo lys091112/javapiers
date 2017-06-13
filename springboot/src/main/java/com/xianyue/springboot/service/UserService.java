@@ -1,11 +1,16 @@
 package com.xianyue.springboot.service;
 
+import com.xianyue.springboot.config.UserDemoValue;
 import com.xianyue.springboot.dao.UserDao;
 import com.xianyue.springboot.domain.User;
+import com.xianyue.springboot.test.AwareBean;
+import com.xianyue.springboot.test.CommonTestAutoConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,15 +21,14 @@ import java.util.List;
  *
  */
 @Service
+@AutoConfigureAfter(CommonTestAutoConfig.class)
 public class UserService {
     private static Logger logger = LoggerFactory.getLogger(UserService.class);
     @Autowired
     private UserDao userDao;
 
-    @Value (value = "${user.id}")
-    private long userId = 0;
-
-
+    @Autowired
+    UserDemoValue userDemoValue;
     /**
      * 通过这个实例证明@Value的初始化在PostConstruct之前
      */
