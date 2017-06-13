@@ -1,18 +1,18 @@
 package com.xianyue.springboot.domain;
 
 import com.xianyue.springboot.util.PageInfo;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.apache.ibatis.type.Alias;
 
 /**
  * @author Xianyue
  */
-@Data
+@Alias("User")
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Alias("User")
+@Setter
+@Getter
 public class User extends PageInfo{
     private int    userId;
     private String userName;

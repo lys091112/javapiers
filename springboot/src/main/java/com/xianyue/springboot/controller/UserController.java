@@ -99,8 +99,8 @@ public class UserController {
         return userService.testTransaction(user);
     }
 
-    @RequestMapping(value = "/getUsers", method = RequestMethod.POST)
-    public List<User> getUsers(@RequestParam(value = "pageIndex") int pageIndex) {
+    @RequestMapping(value = "/getUsers", method = RequestMethod.GET)
+    public List<User> getUsers(HttpServletRequest request, @RequestParam(value = "pageIndex") int pageIndex) {
         return userService.getUsersByPage(pageIndex);
     }
 

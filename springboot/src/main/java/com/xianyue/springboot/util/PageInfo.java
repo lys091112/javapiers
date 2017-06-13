@@ -1,15 +1,15 @@
 package com.xianyue.springboot.util;
 
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
+import lombok.Setter;
 
 /**
  * @author Xianyue
  */
-@Data
 @NoArgsConstructor
-@Accessors(chain = true)
+@Setter
+@Getter
 public class PageInfo {
     private int totalPage; //总页数
     private int totalCount; //总数量
