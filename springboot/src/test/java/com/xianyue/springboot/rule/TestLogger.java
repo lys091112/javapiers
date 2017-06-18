@@ -7,9 +7,6 @@ import org.junit.runners.model.Statement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Created by langle on 2017/5/25.
- */
 public class TestLogger implements TestRule {
     @Getter
     private Logger logger;

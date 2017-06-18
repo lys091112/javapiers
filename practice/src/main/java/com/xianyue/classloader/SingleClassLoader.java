@@ -1,4 +1,4 @@
-package classloader;
+package com.xianyue.classloader;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -68,7 +68,7 @@ public class SingleClassLoader extends ClassLoader {
         }
 
 
-        ClassLoader loader = classloader.SingleClassLoader.class.getClassLoader();
+        ClassLoader loader = com.xianyue.classloader.SingleClassLoader.class.getClassLoader();
         while (loader != null) {
             System.out.println(loader);
             loader = loader.getParent();

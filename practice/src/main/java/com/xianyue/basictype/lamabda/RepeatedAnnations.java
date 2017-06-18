@@ -1,4 +1,4 @@
-package com.xianyue.langfeature.java8;
+package com.xianyue.basictype.lamabda;
 
 import java.lang.annotation.*;
 import java.lang.reflect.Method;

@@ -1,4 +1,4 @@
-package com.xianyue.third.database;
+package com.xianyue.util.database;
 
 import net.sf.jsqlparser.JSQLParserException;
 import net.sf.jsqlparser.parser.CCJSqlParserManager;

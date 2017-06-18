@@ -37,7 +37,7 @@ dependencies {
             libraries.'spring-boot-test'
     )
     compile(
-            libraries.'spring-boot',
+            libraries.'spring-boot-web',
             libraries.'spring-boot-jdbc',
             libraries.'spring-boot-mail',
             libraries.'lombok',

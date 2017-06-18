@@ -1,4 +1,4 @@
-package com.xianyue.langfeature.java8;
+package com.xianyue.basictype.lamabda;
 
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;

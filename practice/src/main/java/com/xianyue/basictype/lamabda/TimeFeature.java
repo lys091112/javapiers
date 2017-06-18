@@ -1,6 +1,7 @@
-package com.xianyue.langfeature.java8;
+package com.xianyue.basictype.lamabda;
 
 import java.time.Clock;
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -22,5 +23,7 @@ public class TimeFeature {
         LocalTime timeFromClock = LocalTime.now(clock);
         System.out.println(localTime);
         System.out.println(timeFromClock);
+
+        System.out.println(Duration.ofHours(3).toMillis());
     }
 }

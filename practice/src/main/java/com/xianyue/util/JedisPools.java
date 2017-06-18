@@ -1,4 +1,4 @@
-package com.xianyue.springboot.util;
+package com.xianyue.util;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
