@@ -23,4 +23,15 @@ public class CommonTestAutoConfig {
   public InitializingBean createInnitializingBean() {
     return new InnitialzingBeanTest();
   }
+
+  //这两个的执行先后顺序极可能用order区分开
+//  @Bean
+//  public MyBeanPostProcessorDouble myBeanPostProcessorDouble() {
+//    return new MyBeanPostProcessorDouble();
+//  }
+  @Bean
+  public MyBeanPostProcessor myBeanPostProcessor() {
+    return new MyBeanPostProcessor();
+  }
+
 }

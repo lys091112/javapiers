@@ -1,9 +1,12 @@
 package com.xianyue.springboot.test;
 
+import com.xianyue.springboot.test.retrofit.SpecialComponentProvider;
+import java.util.Set;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
 import javax.annotation.PostConstruct;
+import org.springframework.beans.factory.config.BeanDefinition;
 
 /**
  * @author Xianyue
@@ -25,6 +28,11 @@ public class InnitialzingBeanTest implements InitializingBean, DisposableBean{
     @PostConstruct
     public void init() {
         System.out.println("postConstruct init");
+        Set<BeanDefinition> sets = SpecialComponentProvider.getInstance().findCandidateComponents("com.xianyue");
+        System.out.println("===========================>>>>>");
+        sets.forEach(t -> System.out.print(t.getBeanClassName()));
+        System.out.println();
+        System.out.println("===========================>>>>>");
     }
 
     @Override

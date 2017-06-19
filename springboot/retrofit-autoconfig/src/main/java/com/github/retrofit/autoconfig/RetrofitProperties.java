@@ -1,4 +1,4 @@
-package com.github.retrofit;
+package com.github.retrofit.autoconfig;
 
 /**
  * retorfit properties
