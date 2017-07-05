@@ -12,5 +12,7 @@ public class HashMapNotThreadSafeMain {
       Thread t1 = new Thread(runnable);
       t1.start();
     }
+
+    System.out.println("--------------------> ");
   }
 }

@@ -9,7 +9,6 @@ public abstract class CachedGauge<T> {
     private final long       timeoutNS;
 
     private volatile T       value;
-
     protected CachedGauge(long timeout, TimeUnit timeoutUnit) {
         this(new Clock(), timeout, timeoutUnit);
     }
@@ -52,7 +51,6 @@ public abstract class CachedGauge<T> {
 
     public static class Clock {
         private long time;
-
         public long getTick() {
             return System.nanoTime();
         }

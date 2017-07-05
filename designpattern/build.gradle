@@ -24,5 +24,6 @@ dependencies {
             libraries.'slf4j-api',
             libraries.'cglib',
             libraries.'asm',
+            libraries.'lombok'
     )
 }
