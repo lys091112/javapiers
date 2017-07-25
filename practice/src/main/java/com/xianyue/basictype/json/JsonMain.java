@@ -30,7 +30,6 @@ public class JsonMain {
         //如果不是用JsonField屏蔽，那么即便转成父类，在程序中子类的方法不能调用，但是在转json时，子类的成员还是被转进json中
 //        WebhookBaseInfo baseInfo = (WebhookBaseInfo) webhookInfo;
 
-        System.out.println("------------------------------");
         //JSON过滤器
         PropertyFilter filter = new PropertyFilter() {
             @Override
@@ -39,5 +38,9 @@ public class JsonMain {
             }
         };
         System.out.println(JSON.toJSONString(webhookInfo, filter));
+
+        WebhookBaseInfo baseInfo = (WebhookBaseInfo) webhookInfo;
+        System.out.println(baseInfo.getClass().getName());
+        System.out.println(baseInfo.getClass().getSuperclass().getName());
     }
 }

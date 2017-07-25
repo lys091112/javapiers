@@ -16,7 +16,6 @@ import java.util.jar.JarFile;
 import java.util.stream.Collectors;
 
 /**
- * @author XianYue
  * TODO
  * 类加载器 理解类记载器的流程，并对其进行分析
  * 添加logger，完善日志记录

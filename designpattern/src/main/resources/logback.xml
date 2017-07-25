@@ -3,10 +3,13 @@
 
     <property name="LOG_HOME" value="/tmp/javapairs/logs"/>
 
+    <!-- <pattern>%d{HH:mm:ss.SSS} [%thread] %class{30} %-5level %logger{30} ==> %msg%n</pattern>
+       %class same as %logger
+     -->
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <charset>UTF-8</charset>
-            <pattern>%d{HH:mm:ss.SSS} %class %-5level ==> %msg%n</pattern>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{30} ==> %msg%n</pattern>
         </encoder>
     </appender>
 
@@ -14,27 +17,12 @@
               class="ch.qos.logback.core.rolling.RollingFileAppender">
         <File>${LOG_HOME}/design/design.log</File>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>${LOG_HOME}/design/design.log-%d{yyyy-MM-dd}
-            </FileNamePattern>
-            <MaxHistory>3</MaxHistory>
+            <FileNamePattern>${LOG_HOME}/design/design.log-%d{yyyy-MM-dd}</FileNamePattern>
+            <MaxHistory>30</MaxHistory>
         </rollingPolicy>
         <encoder>
             <charset>UTF-8</charset>
-            <pattern>%d{HH:mm:ss.SSS} %class %-5level ==> %msg%n</pattern>
-        </encoder>
-    </appender>
-
-    <appender name="mybatis-data"
-              class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <File>${LOG_HOME}/design/design-data.log</File>
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>${LOG_HOME}/design-dv/design-data.log-%d{yyyy-MM-dd}
-            </FileNamePattern>
-            <MaxHistory>8</MaxHistory>
-        </rollingPolicy>
-        <encoder>
-            <charset>UTF-8</charset>
-            <pattern>%d{HH:mm:ss.SSS} %class %-5level ==> %msg%n</pattern>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{30} ==> %msg%n</pattern>
         </encoder>
     </appender>
 

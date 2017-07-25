@@ -41,7 +41,6 @@ dependencies {
             libraries.'guava',
             libraries.'commons-collections',
             libraries.'lombok',
-
     )
 }
 
