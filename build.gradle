@@ -22,7 +22,7 @@ repositories {
 idea {
     module {
         downloadJavadoc = false
-        downloadSources = false
+        downloadSources = true
     }
 }
 

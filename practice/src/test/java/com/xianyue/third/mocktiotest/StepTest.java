@@ -1,4 +1,4 @@
-package com.xianyue.mocktiotest;
+package com.xianyue.third.mocktiotest;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

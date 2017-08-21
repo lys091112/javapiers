@@ -1,10 +1,7 @@
-package com.xianyue.mocktiotest;
+package com.xianyue.third.mocktiotest;
 
 import java.io.File;
 
-/**
- * @author Xianyue
- */
 public class Step {
     public boolean callArgumentInstance(File file) {
         return file.exists();
