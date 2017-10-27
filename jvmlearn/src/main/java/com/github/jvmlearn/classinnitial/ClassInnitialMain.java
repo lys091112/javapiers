@@ -3,6 +3,8 @@ package com.github.jvmlearn.classinnitial;
 public class ClassInnitialMain {
 
     public static void main(String[] args) {
+        innitial01();
+        innitial02();
         innitial03();
     }
 
