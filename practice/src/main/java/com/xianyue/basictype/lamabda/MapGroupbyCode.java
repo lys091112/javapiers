@@ -2,14 +2,14 @@ package com.xianyue.basictype.lamabda;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-/** */
-public class GroupbyCode {
+public class MapGroupbyCode {
 
   public static void main(String[] args) {
     List<String> list =
@@ -51,5 +51,20 @@ public class GroupbyCode {
                 Collectors.groupingBy(
                     Item::getPrice, Collectors.mapping(Item::getName, Collectors.toSet())));
     System.out.println(groupingNames);
+
+    System.out.println(complexMap(items));
   }
+
+  /**
+   * 这个例子针对与该场景不是很好，但如果我们需要item中的多个值做为key的话，
+   * 那么可以使用这个方式去处理
+   * 当只使用item中的一个值作为key时，可以使用Collectors.toMap(...)
+   */
+  public static Map<String, Integer> complexMap(List<Item> items) {
+    return items.stream().collect(HashMap::new, (map, item) -> {
+      map.put(item.getName(), item.getQty());
+//      map.put("itemId" + item.getItemId(), item.getPrice().intValue());
+    }, HashMap::putAll);
+  }
+
 }

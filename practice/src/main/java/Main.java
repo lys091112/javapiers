@@ -9,6 +9,8 @@ public class Main {
   public static void main(String[] args) {
     //    lambdaExecThread();
 
+      String key = "<script>alert('xss')</script>";
+
   }
 
 

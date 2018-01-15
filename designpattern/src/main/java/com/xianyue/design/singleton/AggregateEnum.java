@@ -1,4 +1,4 @@
-package com.xianyue.design.proxy.singleton;
+package com.xianyue.design.singleton;
 
 import lombok.extern.slf4j.Slf4j;
 

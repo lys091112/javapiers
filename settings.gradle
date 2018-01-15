@@ -2,7 +2,6 @@ rootProject.name = 'javapiers'
 include 'jvmlearn'
 include 'filescanner'
 include 'practice'
-include 'distributed'
 include 'mail-sender'
 include 'designpattern'
 
