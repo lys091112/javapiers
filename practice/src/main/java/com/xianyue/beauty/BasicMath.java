@@ -1,4 +1,4 @@
-package com.xianyue.basictype;
+package com.xianyue.beauty;
 
 /**
  * @Xianyue  数学类相关的使用技巧
