@@ -1,13 +1,13 @@
 package com.xianyue.basictype.regex;
 
 import lombok.experimental.UtilityClass;
-import org.apache.commons.collections.CollectionUtils;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+import org.apache.commons.collections4.CollectionUtils;
 
 /**
  * @author Xianyue

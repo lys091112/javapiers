@@ -1,54 +1,11 @@
-group 'com.xianyue'
-version '1.0-SNAPSHOT'
-
-apply plugin: 'java'
-apply plugin: 'idea'
-
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
-apply from: '../plugin.gradle'
-
-repositories {
-    mavenLocal() //1.优先查找本地maven库，性能最好
-    maven{//2.其次查找aliyun maven库
-        url'http://maven.aliyun.com/nexus/content/groups/public/'
-    }
-    maven {
-        url("https://plugins.gradle.org/m2/")
-    }
-//    maven {url 'http://maven.oschina.net/content/groups/public/'}
-//    jcenter()
-    mavenCentral()//3.最后查找maven中央库
-}
-
 dependencies {
-    testCompile(
-            libraries.'junit',
-            libraries.'hamcrest',
-            libraries.'mockito',
-            libraries.'powermock',
-            libraries.'powermock-api',
-    )
+//    testCompile "org.powermock:powermock-module-junit4:${Powermock_Version}"
+//    testCompile "org.powermock:powermock-api-mockito:${Powermock_Version}"
 
-    compile(
-            libraries.'jsql-parser',
-            libraries.'commons-lang3',
-            libraries.'jackson-databind',
-            libraries.'ali-json',
-            libraries.'logback-classic',
-            libraries.'jcl-over-slf4j',
-            libraries.'log4j-over-slf4j',
-            libraries.'slf4j-api',
-            libraries.'redis',
-            libraries.'redisson',
-            libraries.'cglib',
-            libraries.'guava',
-            libraries.'commons-collections',
-            libraries.'lombok',
-            libraries.'retrofit2',
-            libraries.'okhttp',
-            libraries.'retrofit2-convert-json',
-    )
+    compile "com.squareup.retrofit2:retrofit:${Retrofit2_Version}"
+    compile "com.squareup.retrofit2:converter-jackson:${Retrofit2_Version}"
+    compile "org.apache.commons:commons-collections4:${Common_Collection_Version}"
+    compile "redis.clients:jedis:${Redis_Version}"
+
 }
 

@@ -7,12 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * �ڴ�һ������չʾ
  *
- * VM Args��-XX:PermSize=10M -XX:MaxPermSize=10M
+ * VM Args -XX:PermSize=10M -XX:MaxPermSize=10M
  *
- * ��1.7֮��û�������ô�����Ϊʹ�ö����ڴ�-XX:MetaspaceSize=10M -XX:MaxMetaspaceSize=10M
- * �����ڴ�ķ���: ����Ϣ����������̬������JIT�����������Ĵ��룬ֻ������Ϣ��Classes Metadata���Ƿŵ�Metaspace�ˣ����������ݣ������ŵ���Java����
+ * -XX:MetaspaceSize=10M -XX:MaxMetaspaceSize=10M
  *
  *
  */
@@ -29,8 +27,7 @@ public class OOMPractice {
     }
 
     /**
-     * ���ڴ����
-     * VM Args��-Xms20m -Xmx20m -XX:+HeapDumpOnOutOfMemoryError //�������ɵ�ǰ�ѿ���
+     * VM Args -Xms20m -Xmx20m -XX:+HeapDumpOnOutOfMemoryError //�������ɵ�ǰ�ѿ���
      */
     private static void heamOom() {
         List<HeapOom> list = new ArrayList<HeapOom>();
