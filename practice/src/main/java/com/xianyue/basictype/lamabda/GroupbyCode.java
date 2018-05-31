@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -29,6 +30,9 @@ public class GroupbyCode {
             new Item(6L, "apple", 10, new BigDecimal("9.99")),
             new Item(7L, "banana", 10, new BigDecimal("19.99")),
             new Item(8L, "apple", 20, new BigDecimal("9.99")));
+
+    Map<Long, Item> maps = items.stream().filter(Objects::nonNull)
+            .collect(Collectors.toMap(t -> t.getItemId(), t -> t));
 
     Map<String, Long> counting =
         items.stream().collect(Collectors.groupingBy(Item::getName, Collectors.counting()));
