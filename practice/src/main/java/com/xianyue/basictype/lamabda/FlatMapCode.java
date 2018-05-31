@@ -1,14 +1,13 @@
 package com.xianyue.basictype.lamabda;
 
 import com.google.common.collect.ImmutableList;
-import lombok.extern.slf4j.Slf4j;
-
 import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class FlatMapCode {

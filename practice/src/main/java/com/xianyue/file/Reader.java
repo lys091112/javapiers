@@ -49,7 +49,6 @@ public class Reader {
         } finally {
             try {
                 if (fis != null) {
-
                     fis.close();
                 }
                 if (fos != null) {

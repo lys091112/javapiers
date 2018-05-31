@@ -26,8 +26,7 @@ public class MyURLClassLoader extends ClassLoader {
   private byte[] loadClassData(String name) {
     String filePath = dir + File.separatorChar + name.replace(".", File.separator) + ".class";
 
-    try (FileInputStream fis = new FileInputStream(new File(filePath));
-        ByteArrayOutputStream os = new ByteArrayOutputStream()) {
+    try (FileInputStream fis = new FileInputStream(new File(filePath)); ByteArrayOutputStream os = new ByteArrayOutputStream()) {
 
       byte[] buf = new byte[1024];
       int len = 0;
