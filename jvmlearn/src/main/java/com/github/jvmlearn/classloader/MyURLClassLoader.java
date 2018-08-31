@@ -24,8 +24,10 @@ public class MyURLClassLoader extends ClassLoader {
   }
 
   private byte[] loadClassData(String name) {
-    String filePath = dir + File.separatorChar + name.replace(".", File.separator) + ".class";
+//    String filePath = dir + File.separatorChar + name.replace(".", File.separator) + ".class";
+//      try (FileInputStream fis = new FileInputStream(new File(filePath)); ByteArrayOutputStream os = new
 
+    String filePath = dir + File.separatorChar + resolveClassName(name) + ".class";
     try (FileInputStream fis = new FileInputStream(new File(filePath)); ByteArrayOutputStream os = new ByteArrayOutputStream()) {
 
       byte[] buf = new byte[1024];
@@ -41,6 +43,14 @@ public class MyURLClassLoader extends ClassLoader {
       e.printStackTrace();
     }
     return null;
+  }
+
+  public String resolveClassName(String className) {
+    int idx = className.lastIndexOf(".");
+    if (-1 == idx) {
+      return className;
+    }
+    return className.substring(idx + 1);
   }
 
   public void setDir(String dir) {

@@ -25,7 +25,7 @@ public class ClassLoaderPractice {
     ConstValue constValue1 = new ConstValue();
 
     MyURLClassLoader myURLClassLoader = new MyURLClassLoader();
-    myURLClassLoader.setDir("/Users/langle/xianyue/tmp/demo");
+    myURLClassLoader.setDir(System.getProperty("user.dir") + "/jvmlearn/src/main/resources/tempclass");
     try {
       Class<?> constValue = myURLClassLoader
           .loadClass("com.xianyue.util.json.JackSonMain");
@@ -39,10 +39,15 @@ public class ClassLoaderPractice {
           method.invoke(obj);
         }
       }
-
-
-      System.out.println(obj.getClass());
+      System.out.println("obj1 --> " + obj);
       System.out.println(obj.getClass().getClassLoader());
+      myURLClassLoader = null; //回收加载器
+
+      MyURLClassLoader myURLClassLoader2 = new MyURLClassLoader();
+      myURLClassLoader2.setDir(System.getProperty("user.dir") + "/jvmlearn/src/main/resources/tempclass");
+      Class<?> constValue2 = myURLClassLoader2.loadClass("com.xianyue.util.json.JackSonMain");
+      Object obj2 = constValue.newInstance();
+      System.out.println("obj2 --> " + obj2);
     } catch (Exception e) {
       e.printStackTrace();
     }

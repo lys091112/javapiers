@@ -6,6 +6,7 @@ dependencies {
     compile "com.squareup.retrofit2:converter-jackson:${Retrofit2_Version}"
     compile "org.apache.commons:commons-collections4:${Common_Collection_Version}"
     compile "redis.clients:jedis:${Redis_Version}"
+    compile group: 'mysql', name: 'mysql-connector-java', version: '6.0.6'
 
 }
 

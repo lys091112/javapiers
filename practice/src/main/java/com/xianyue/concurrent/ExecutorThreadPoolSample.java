@@ -1,8 +1,12 @@
 package com.xianyue.concurrent;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * @author XianYue
@@ -96,5 +100,47 @@ public class ExecutorThreadPoolSample {
         }
 
         executor.shutdown();
+    }
+
+    private void excutorTest() {
+        ExecutorService executor = Executors
+            .newFixedThreadPool(4);
+        List<Runnable> singleWorkers = IntStream.range(0, 4).mapToObj((int t) -> {
+                Runnable a = new Runnable() {
+                    AtomicInteger i = new AtomicInteger(0);
+
+                    @Override
+                    public void run() {
+                        System.out.println("i = " + i.getAndIncrement());
+                    }
+                };
+                executor.submit(a);
+                return a;
+            }
+        ).collect(Collectors.toList());
+
+        ExecutorService executor2 = Executors
+            .newFixedThreadPool(4);
+
+        Runnable b = new Runnable() {
+            AtomicInteger i = new AtomicInteger(0);
+
+            @Override
+            public void run() {
+                while (true) {
+
+                    System.out.println("k=" + i.getAndIncrement() + ", thread= " + Thread.currentThread().getId());
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        };
+        executor2.submit(b);
+
+        executor2.submit(b);
+
     }
 }

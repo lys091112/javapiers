@@ -1,56 +1,24 @@
 package com.xianyue;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.ExecutorService;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class Main {
 
+    private static transient ThreadLocal<SimpleDateFormat> simpleDateFormatThreadLocal
+        = ThreadLocal.withInitial(() -> new SimpleDateFormat("yyyy-MM-dd HH:mm:00"));
+
     public static void main(String[] args) {
-        ExecutorService executor = Executors
-                .newFixedThreadPool(4);
-        List<Runnable> singleWorkers = IntStream.range(0, 4).mapToObj((int t) -> {
-                    Runnable a = new Runnable() {
-                        AtomicInteger i = new AtomicInteger(0);
-
-                        @Override
-                        public void run() {
-                            System.out.println("i = " + i.getAndIncrement());
-                        }
-                    };
-                    executor.submit(a);
-                    return a;
-                }
-        ).collect(Collectors.toList());
-
-//        ExecutorService executor2 = Executors
-//                .newFixedThreadPool(4);
-
-//        Runnable b = new Runnable() {
-//            AtomicInteger i = new AtomicInteger(0);
-//
-//            @Override
-//            public void run() {
-//                while (true) {
-//                    System.out.println("k=" + i.getAndIncrement() + ", thread= " + Thread.currentThread().getId());
-//                    try {
-//                        Thread.sleep(1000);
-//                    } catch (InterruptedException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
-//            }
-//        };
-//        executor2.submit(b);
-
+        System.out.println(simpleDateFormatThreadLocal.get().format(new Date()));
 
         System.out.println(System.getProperty("java.io.tmpdir"));
 

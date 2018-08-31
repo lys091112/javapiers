@@ -33,5 +33,8 @@ public class JavaPathSample {
         System.out.println(Thread.currentThread().getContextClassLoader().getResource("").getPath());
         System.out.println(JavaPathSample.class.getClassLoader().getClass().getName());
         System.out.println(Thread.currentThread().getContextClassLoader().getClass().getName());
+
+        System.out.println(System.getProperty("user.dir"));
+        System.out.println(System.getProperty("java.class.path"));
     }
 }
