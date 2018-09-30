@@ -4,6 +4,7 @@ import com.sun.tools.attach.VirtualMachine;
 import com.sun.tools.attach.VirtualMachineDescriptor;
 import java.util.List;
 
+//  使用power mock 保证程序不报错
 public class Machine {
 
     public static void main(String[] args) {

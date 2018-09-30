@@ -14,5 +14,7 @@ public class PracticeMain {
         System.out.println("arr[0] " + arrs[0]);
         System.out.println("arr[1] " + arrs[1]);
         System.out.println("arr[4] " + arrs[4]);
+
+        System.out.println(System.getProperty("sun.java.command"));
     }
 }

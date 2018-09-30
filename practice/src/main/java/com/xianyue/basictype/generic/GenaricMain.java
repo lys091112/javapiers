@@ -2,6 +2,7 @@ package com.xianyue.basictype.generic;
 
 import java.util.ArrayList;
 import java.util.List;
+import redis.clients.jedis.BinaryClient.LIST_POSITION;
 
 public class GenaricMain {
 
@@ -39,4 +40,10 @@ public class GenaricMain {
         SuperPlant<Apple> plant2 = new SuperPlant<>();
     }
 
+    public List<Fruit> createList() {
+        List<Fruit> list = new ArrayList();
+        list.add(new Apple());
+        list.add(new Orange());
+        return list;
+    }
 }

@@ -1,8 +1,17 @@
 package com.xianyue;
 
+import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -16,22 +25,49 @@ public class Main {
 
     private static transient ThreadLocal<SimpleDateFormat> simpleDateFormatThreadLocal
         = ThreadLocal.withInitial(() -> new SimpleDateFormat("yyyy-MM-dd HH:mm:00"));
+    public static void main(String[] args) throws Exception {
+        double num1 = 50123.12E25;
+        System.out.println(String.valueOf(num1));
+        BigDecimal bd1 = new BigDecimal(num1);
+        System.out.println(bd1.toPlainString());
+        System.out.println(bd1.setScale(2, BigDecimal.ROUND_HALF_UP).toPlainString());
+        HashMap<Long ,Long> map = new HashMap<>();
+        map.put(1L,1L);
+        map.put(2L,2L);
+        map.put(3L,3L);
 
-    public static void main(String[] args) {
-        System.out.println(simpleDateFormatThreadLocal.get().format(new Date()));
+        FileOutputStream fs = new FileOutputStream("foo.ser");
+        ObjectOutputStream os = new ObjectOutputStream(fs);
+        os.writeObject(map);
+        os.close();
 
-        System.out.println(System.getProperty("java.io.tmpdir"));
+        FileInputStream fi = new FileInputStream("foo.ser");
+        ObjectInputStream oi = new ObjectInputStream(fi);
+         HashMap<Long ,Long> map2 = (HashMap<Long, Long>)oi.readObject();
+        System.out.println(map2);
 
-        ScheduledExecutorService pools = Executors.newScheduledThreadPool(2);
-        pools.scheduleAtFixedRate(new Runnable() {
-            AtomicInteger flag = new AtomicInteger(1);
-
-            @Override
-            public void run() {
-                System.out.println("now flag is " + flag.incrementAndGet());
-            }
-        }, 0, 2, TimeUnit.SECONDS);
     }
+
+//        ExecutorService executor2 = Executors
+//                .newFixedThreadPool(4);
+
+//        Runnable b = new Runnable() {
+//            AtomicInteger i = new AtomicInteger(0);
+//
+//            @Override
+//            public void run() {
+//                while (true) {
+//                    System.out.println("k=" + i.getAndIncrement() + ", thread= " + Thread.currentThread().getId());
+//                    try {
+//                        Thread.sleep(1000);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            }
+//        };
+//        executor2.submit(b);
+
 
     // 在非并行的lambda处理中，所有的处理过程都是在一个线程中执行
     public static void lambdaExecThread() {

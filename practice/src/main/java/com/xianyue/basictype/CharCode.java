@@ -8,6 +8,13 @@ import java.util.Arrays;
  */
 public class CharCode {
 
+    //首字母大写
+    public static String captureName(String name) {
+        char[] cs = name.toCharArray();
+        cs[0] -= 32;
+        return String.valueOf(cs);
+    }
+
 
     public static void main(String[] args) throws UnsupportedEncodingException {
         String s = "你好"; // 编码
