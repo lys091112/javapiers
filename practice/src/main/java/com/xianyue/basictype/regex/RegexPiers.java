@@ -12,6 +12,8 @@ import org.apache.commons.collections4.CollectionUtils;
 /**
  * @author Xianyue
  *         正则表达式的基本使用
+ *
+ *         ^((?!(1)$).*)  // 这个正则代表的含义
  */
 @UtilityClass
 public class RegexPiers {

@@ -1,5 +1,11 @@
 package com.github.jvmlearn.utils;
 
+import static com.github.jvmlearn.utils.TypeRenderUtils.classname;
+import static com.github.jvmlearn.utils.TypeRenderUtils.modifier;
+
+import com.github.jvmlearn.HashMapNotThreadSafe;
+import java.security.CodeSource;
+
 /**
  * 类的工具类
  */
@@ -25,9 +31,50 @@ public class ClassUtils {
                 }
             }
         }
-
         return c;
-
     }
+
+    public static ClassDetail renderClassInfo(Class<?> clazz, boolean isPrintField) {
+        ClassDetail detail = new ClassDetail();
+        CodeSource cs = clazz.getProtectionDomain().getCodeSource();
+
+        detail.setClassInfo(classname(clazz))
+            .setCodeSource(getCodeSource(cs))
+            .setName(classname(clazz))
+            .setInterfaces("" + clazz.isInterface())
+            .setIsAnnotation("" + clazz.isAnnotation())
+            .setIsEnum("" + clazz.isEnum())
+            .setIsAnonymousClass("" + clazz.isAnonymousClass())
+            .setIsArray("" + clazz.isArray())
+            .setIsLocalClass("" + clazz.isLocalClass())
+            .setIsMemberClass("" + clazz.isMemberClass())
+            .setIsPrimitive("" + clazz.isPrimitive())
+            .setIsSynthetic("" + clazz.isSynthetic())
+            .setSimpleName(clazz.getSimpleName())
+            .setModifier(modifier(clazz.getModifiers(), ','))
+            .setAnnotation(TypeRenderUtils.drawAnnotation(clazz))
+            .setInterfaces(TypeRenderUtils.drawInterface(clazz))
+            .setSuperClass(TypeRenderUtils.drawSuperClass(clazz))
+            .setClassLoader(TypeRenderUtils.drawClassLoader(clazz))
+            .setClassLoaderHash(TypeRenderUtils.classLoaderHash(clazz));
+
+        if (isPrintField) {
+            detail.setFileds(TypeRenderUtils.drawField(clazz, 0));
+        }
+        return detail;
+    }
+
+    private static String getCodeSource(final CodeSource cs) {
+        if (null == cs || null == cs.getLocation() || null == cs.getLocation().getFile()) {
+            return "";
+        }
+
+        return cs.getLocation().getFile();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(renderClassInfo(HashMapNotThreadSafe.class, true));
+    }
+
 
 }
