@@ -1,6 +1,6 @@
 package com.xianyue.basictype.jvm.classloader;
 
-import com.github.jvmlearn.classinnitial.ConstValue;
+import com.xianyue.basictype.jvm.classinnitial.ConstValue;
 import java.lang.reflect.Method;
 import java.net.URL;
 import sun.misc.Launcher;

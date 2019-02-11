@@ -1,4 +1,6 @@
 apply plugin: 'jacoco'
+apply plugin: 'me.champeau.gradle.jmh'
+apply plugin: 'jcstress'
 
 jacoco {
     toolVersion = "0.7.6.201602180812"
@@ -13,6 +15,10 @@ jacocoTestReport {
     }
 }
 
+jmh {
+    duplicateClassesStrategy = 'warn'
+    jmhVersion = '1.17'
+}
 
 
 //code

@@ -3,12 +3,15 @@ buildscript {
     repositories {
         mavenLocal() //1.优先查找本地maven库，性能最好
         maven {//2.其次查找aliyun maven库
-            url 'http://maven.aliyun.com/nexus/content/groups/public/'
+            url "https://plugins.gradle.org/m2/"
+//            url 'http://maven.aliyun.com/nexus/content/groups/public/'
         }
         mavenCentral()
         jcenter()
         dependencies {
             classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE")
+            classpath 'me.champeau.gradle:jmh-gradle-plugin:0.3.1'
+            classpath 'com.github.erizo.gradle:jcstress-gradle-plugin:0.8.0'
         }
     }
 }
@@ -16,6 +19,7 @@ buildscript {
 allprojects { subproj ->
     apply plugin: 'java'
     apply plugin: 'idea'
+    apply plugin: 'maven'
     apply from: "$rootDir/config.gradle"
     apply from: "$rootDir/plugin.gradle"
 
@@ -46,7 +50,6 @@ allprojects { subproj ->
         sourceSets*.resources.srcDirs*.each { it.mkdirs() }
     }
 }
-
 subprojects { subproj ->
     apply plugin: 'application' // 可以运行、安装应用程序并用非“fat jar”方式创建二进制发布版本。
     group = "com.xianyue.${githubProjectName}"
@@ -67,9 +70,6 @@ subprojects { subproj ->
             exclude group: 'org.hamcrest', module: 'hamcrest-core'
         }
         testCompile "org.hamcrest:hamcrest-library:${Hamcrest_Version}"
-//        testCompile "org.mockito:mockito-all:${Mockito_Version}"
-//        testCompile "org.hamcrest:hamcrest-all:${Hamcrest_Version}"
-//        testCompile "org.hamcrest:hamcrest-core:${Hamcrest_Version}"
 
         compile "org.projectlombok:lombok:${Lombok_Version}"
         compile "com.google.guava:guava:${Guava_Version}"
@@ -85,7 +85,13 @@ subprojects { subproj ->
         compile "org.slf4j:log4j-over-slf4j:${Slf4j_Version}"
         compile "org.slf4j:slf4j-api:${Slf4j_Version}"
 
+
+        jmh "org.openjdk.jmh:jmh-core:1.18"
+        jmh "org.openjdk.jmh:jmh-generator-annprocess:1.18"
+
+    }
+
+    jcstress {
+        jcstressDependency "org.openjdk.jcstress:jcstress-core:0.5"
     }
 }
-
-

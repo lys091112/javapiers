@@ -1,7 +1,11 @@
 package com.xianyue;
 
+import com.google.common.cache.CacheBuilder;
+import com.google.common.cache.CacheLoader;
+import com.google.common.cache.LoadingCache;
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.HashMap;
 
 public class Main {
@@ -18,5 +22,17 @@ public class Main {
         map.put(1L, 1L);
         map.put(2L, 2L);
         map.put(3L, 3L);
+        LoadingCache<String, String> cache = CacheBuilder.newBuilder().expireAfterAccess(Duration.ofSeconds(5))
+            .build(new CacheLoader<String, String>() {
+                @Override
+                public String load(String key) throws Exception {
+                    throw new NullPointerException();
+//                    return "10";
+                }
+            });
+
+        cache.get("key1");
+        cache.get("key1");
+        cache.get("key2");
     }
 }

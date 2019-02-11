@@ -1,4 +1,4 @@
-package com.xianyue.basictype.oop;
+package com.xianyue.basictype.jvm.oop;
 
 /**
  * @author Xianyue

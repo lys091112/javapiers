@@ -1,7 +1,4 @@
-package com.xianyue.basictype.oop;
-
-import sun.reflect.CallerSensitive;
-import sun.reflect.Reflection;
+package com.xianyue.basictype.jvm.oop;
 
 /**
  * @author Xianyue

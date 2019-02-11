@@ -1,9 +1,9 @@
 package com.xianyue.basictype.jvm.utils;
 
-import static com.github.jvmlearn.utils.TypeRenderUtils.classname;
-import static com.github.jvmlearn.utils.TypeRenderUtils.modifier;
+import static com.xianyue.basictype.jvm.utils.TypeRenderUtils.classname;
+import static com.xianyue.basictype.jvm.utils.TypeRenderUtils.modifier;
 
-import com.github.jvmlearn.HashMapNotThreadSafe;
+import com.xianyue.basictype.jvm.HashMapNotThreadSafe;
 import java.security.CodeSource;
 
 /**

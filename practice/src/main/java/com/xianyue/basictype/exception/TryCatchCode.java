@@ -1,4 +1,4 @@
-package com.xianyue.basictype;
+package com.xianyue.basictype.exception;
 
 /**
  * 在try中无论如何final 都会被执行到， 如果final中return， 那么会覆盖try中的

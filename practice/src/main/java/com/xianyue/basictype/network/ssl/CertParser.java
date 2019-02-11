@@ -3,10 +3,13 @@ package com.xianyue.basictype.network.ssl;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.math.BigInteger;
+import java.security.PublicKey;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import sun.misc.BASE64Encoder;
 
 public class CertParser {
 
@@ -53,7 +56,24 @@ public class CertParser {
         }
     }
 
+
+    /**
+     * 从cer证书中提取公钥
+     */
+    public String getPublicKey() throws Exception {
+        String currentPath = this.getClass().getClassLoader().getResource("").getPath();
+
+        CertificateFactory certificatefactory = CertificateFactory.getInstance("X.509");
+        FileInputStream bais = new FileInputStream(currentPath + "safaricom_b2c_readable.cer");
+        X509Certificate Cert = (X509Certificate) certificatefactory.generateCertificate(bais);
+        PublicKey pk = Cert.getPublicKey();
+        System.out.println("pk:" + new BASE64Encoder().encode(pk.getEncoded()));
+        String res = new BigInteger(1, pk.getEncoded()).toString(16);
+        System.out.println("pk:" + res);
+        return res;
+    }
+
     public static void main(String[] args) {
-        new CertParser().parser("/home/liuhongjun/xianyue/work/keystore.cer");
+        new CertParser().parser("~/xianyue/work/keystore.cer");
     }
 }

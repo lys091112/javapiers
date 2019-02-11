@@ -1,5 +1,6 @@
 package com.xianyue.basictype.jvm.generic.sinker;
 
+import com.xianyue.basictype.jvm.utils.CopyTypeResolver;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +24,9 @@ public class SinkerCreator {
 
 
     public static void main(String[] args) {
-        createSinker().forEach(sinker -> sinker.sink(null));
+        createSinker().forEach(sinker -> {
+            System.out.println(CopyTypeResolver.introspector(sinker.getClass()));
+            sinker.sink(null);
+        });
     }
 }

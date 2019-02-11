@@ -1,9 +1,11 @@
 package com.xianyue.basictype.jvm.generic;
 
+import com.xianyue.basictype.jvm.utils.CopyTypeResolver;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GenaricMain {
+public class GenericMain {
 
     public static void main(String[] args) {
         List<Fruit> fruits = new ArrayList<>();

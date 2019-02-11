@@ -1,12 +1,11 @@
 dependencies {
-//    testCompile "org.powermock:powermock-module-junit4:${Powermock_Version}"
-//    testCompile "org.powermock:powermock-api-mockito:${Powermock_Version}"
-
     compile "com.squareup.retrofit2:retrofit:${Retrofit2_Version}"
     compile "com.squareup.retrofit2:converter-jackson:${Retrofit2_Version}"
     compile "org.apache.commons:commons-collections4:${Common_Collection_Version}"
     compile "redis.clients:jedis:${Redis_Version}"
     compile group: 'mysql', name: 'mysql-connector-java', version: '6.0.6'
+    compileOnly 'org.powermock:powermock-module-javaagent:1.7.4'
+
 
 }
 

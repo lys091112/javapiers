@@ -16,7 +16,7 @@ ext {
     Alibaba_Json_Version = '1.2.28'
 
     //util
-    Guava_Version = '21.0'
+    Guava_Version = '27.0-jre'
     Swagger_Version = '2.6.1'
     Lombok_Version = '1.16.18'
     Retrofit2_Version = "2.3.0"

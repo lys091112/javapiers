@@ -1,5 +1,6 @@
-package com.xianyue.copylearn.beauty;
+package com.xianyue.basictype.jvm.utils;
 
+import com.xianyue.copylearn.beauty.ConfigException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
