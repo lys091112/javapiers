@@ -18,7 +18,6 @@ public class NumberUtil {
     public void longBasic() {
         System.out.println("------------Long Basic------------");
         System.out.println(Long.MAX_VALUE);
-
         System.out.println(Long.MAX_VALUE / 6000000.0 / 24 / 3600 / 365);
     }
 
@@ -40,12 +39,31 @@ public class NumberUtil {
         System.out.println("--------");
         String k = String.valueOf((double) num1);
         System.out.println(k);
+    }
 
+    /**
+     * 将16进制的字符串转化为二进制的字符串
+     */
+    public String hexString2binaryString(String hexString) {
+        if (hexString == null || hexString.length() % 2 != 0) {
+            return null;
+        }
+        String bString = "", tmp;
+        for (int i = 0; i < hexString.length(); i++) {
+            tmp = "0000" + Integer.toBinaryString(Integer.parseInt(hexString.substring(i, i + 1), 16)); // tmp的作用是为了填充字符串
+            bString += tmp.substring(tmp.length() - 4);
+        }
+        return bString;
     }
 
     public static void main(String[] args) {
         basic();
         longBasic();
         scientificNotation();
+
+        // 将二进制字符串转化为整形
+        System.out.println(Integer.parseInt("1101", 2));
     }
 }
+
+
