@@ -6,10 +6,12 @@ public class ClassInnitialMain {
         innitial01();
         innitial02();
         innitial03();
-        int a = 1;
-        int b = 2;
-        int c = 3;
-        int d = a + b;
+
+        System.out.println("initialclass");
+        InitialClass initialClass = new InitialClass();
+
+        System.out.println("initEnumClass");
+        EnumInitialClass enumInitialClass = EnumInitialClass.SUCCESS;
     }
 
 

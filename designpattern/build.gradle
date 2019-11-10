@@ -1,4 +1,0 @@
-dependencies {
-    compile "cglib:cglib:${Cglib_Version}"
-    compile "org.ow2.asm:asm:${Asm_Version}"
-}

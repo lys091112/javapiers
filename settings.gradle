@@ -3,5 +3,3 @@ include 'jvmlearn'
 include 'filescanner'
 include 'practice'
 include 'mail-sender'
-include 'designpattern'
-
