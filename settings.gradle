@@ -1,5 +1,5 @@
 rootProject.name = 'javapiers'
-include 'jvmlearn'
+include 'jvmagent'
 include 'filescanner'
 include 'practice'
 include 'mail-sender'

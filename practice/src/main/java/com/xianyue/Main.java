@@ -3,6 +3,7 @@ package com.xianyue;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
+import com.vladsch.idea.multimarkdown.license.LicenseAgent;
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
@@ -26,13 +27,20 @@ public class Main {
             .build(new CacheLoader<String, String>() {
                 @Override
                 public String load(String key) throws Exception {
-                    throw new NullPointerException();
-//                    return "10";
+                    return "10";
                 }
             });
 
-        cache.get("key1");
-        cache.get("key1");
-        cache.get("key2");
+        System.out.println(cache.get("key1"));
+        System.out.println(cache.get("key1"));
+        System.out.println(cache.get("key2"));
+
+        Main main = new Main();
+        main.test();
+        LicenseAgent agent = new LicenseAgent();
+    }
+
+    public void test() {
+        System.out.println("----------just test--------");
     }
 }

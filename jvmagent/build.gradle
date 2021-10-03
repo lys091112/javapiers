@@ -1,0 +1,44 @@
+group 'me.crescent'
+version '1.0.0'
+
+apply plugin: 'java'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.powermock:powermock-module-javaagent:1.7.4'
+    compile 'org.javassist:javassist:3.26.0-GA'
+    compileOnly 'com.intellij:openapi:7.0.3'
+
+}
+
+jar {
+    manifest {
+        attributes 'Manifest-Version': '1.0'
+        attributes 'Created-By': 'Crescent'
+        attributes 'Premain-Class': 'me.crescent.agent.StartUp'
+        attributes 'Can-Refefine-Class': true
+    }
+//    way2 package fatjar
+//    from {
+//        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+//    }
+}
+shadowJar {
+    manifest {
+        attributes 'Manifest-Version': '1.0'
+        attributes 'Created-By': 'Crescent'
+        attributes 'Premain-Class': 'me.crescent.agent.StartUp'
+        attributes 'Can-Refefine-Class': true
+    }
+    relocate 'javassist', 'me.crescent.javassist'
+    dependencies {
+        include(dependency("org.javassist:javassist:3.26.0-GA"))
+    }
+}

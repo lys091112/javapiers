@@ -34,9 +34,8 @@ public class ORateLimiter {
 
     public boolean acquire(int permits) {
 
-        boolean tryAcquire = rateLimiter.tryAcquire(permits);
 
-        if (tryAcquire) {
+        if (rateLimiter.tryAcquire(permits)) {
             rateLimiter.acquire(permits);
             return true;
         }

@@ -1,4 +1,4 @@
-package com.github.jvmlearn.classinnitial;
+package com.xianyue.basictype.jvm.classinnitial;
 
 /**
  * @author liuhongjun
